@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-blue: #01416f;
+    --secondary-orange: #f7941d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins";
+}
+
+/* Navbar starts here */
+
+nav {
+    width: 100vw;
+    background-color: var(--primary-blue);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 60%;
+    padding: 1% 5%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+}
+
+.nav-logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.nav-logo h1 {
+    font-size: 3em;
+    color: #fff;
+}
+
+nav a {
+    font-size: 1.6em;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 1.5em;
+    transition: all .3s;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--secondary-orange);
+}
+
+/* Navbar ends here */
+
+/* Hero Section starts here  */
+
+.hero {
+    width: 100vw;
+    height: 90vh;
+    background: url(images/lspu-library.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0 5%;
+    color: #fff;
+    position: relative;
+}
+
+
+.left-card, .right-card {
+    width: 50%;
+    height: 70%;
+    font-size: 24px;
+}
+
+.left-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-card .pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+}
+
+.left-card .pane img {
+    height: 140%;
+}
+
+.right-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-card .title h1 {
+    font-size: 2.5em;
+    color: white;
+}
+
+.right-card .title h1 span {
+    color: var(--secondary-orange);
+}
+
+.right-card .title h3 {
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.right-card .content p {
+    font-size: .8em;
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.right-card .buttons button {
+    font-size: .8em;
+    padding: .5em 1em;
+    background-color: var(--secondary-orange);
+    border: 1px solid transparent;
+    border-radius: .3em;
+    color: #fff;
+    transition: all .2s;
+}
+
+.buttons button:hover {
+    background-color: #fff;
+    /* border: 1px solid var(--secondary-orange); */
+    color: var(--secondary-orange);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    font-weight: 700;
+}
+
+.lab, .teachers, .classrooms {
+    padding: 1em;
+    border-radius: 16px;
+    transition: all .2s;
+    border: 1px solid transparent;
+}
+
+.lab:hover, .teachers:hover, .classrooms:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.info i {
+    margin-right: .5em;
+}
+
+.lab span, .teachers span, .classrooms span {
+    display: block;
+    margin-top: .5em;
+    font-size: .8em;
+    font-weight: 400;
+}
+
+/* Wave Animation start */
+
+.wrapper {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom {
+    width: 100%;
+    height: 100px;
+    background-color: var(--secondary-orange);
+    position: relative;
+    color: #3586ff;
+    overflow: hidden;
+}
+
+.bottom .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(images/wave.png);
+    background-size: 1000px 100px;
+}
+
+.bottom .wave1 {
+    animation: animate 10s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+.bottom .wave2 {
+    animation: animate2 5s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+.bottom .wave3 {
+    animation: animate 10s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+.bottom .wave4 {
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -2s;
+    bottom: 20px;
+}
+
+
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+/* Wave Animation end */
+/* Hero Section ends here  */
+
+/* Quote Section starts here */
+
+.quote {
+    margin-top: 100px;
+    width: 100%;
+    height: 400px;
+    background: url(images/water.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+}
+
+.quote blockquote {
+    width: 100%;
+    height: 400px;
+    background: rgba(1, 65, 111, .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote h4 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.quote p {
+    font-style: italic;
+}
+
+/* Quote section ends here */
+
+/* Facilities section starts here */
+
+.facilities {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.facilities h2 {
+    font-size: 3.5em;
+    margin-bottom: 1em;
+    color: var(--primary-blue);
+}
+
+.facilities-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.box-container {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--secondary-orange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-orange);
+    font-weight: 700;
+    transition: all .2s;
+}
+
+.box-container:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.box-container i {
+    font-size: 3.5em;
+    margin-bottom: 1em;
+}
+
+/* Facilities section ends here */
+
+/* Admission section starts here */
+.admission {
+    width: 100vw;
+    height: 100vh;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admission-content-container, .admission-image-container {
+    width: 50%;
+    height: 70%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    color: var(--secondary-orange);
+    font-size: 28px;
+}
+
+.admission-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.admission-content-container h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.admission-content-container p {
+    font-size: .8em;
+    color: #444444;
+    margin-bottom: 2em;
+}
+
+.admission-query {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: .5em;
+}
+
+.admission-query button {
+    background-color: var(--primary-blue);
+    border: 1px solid transparent;
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    transition: all .2s;
+}
+
+.admission-query button:hover {
+    background-color: #fff;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    color: var(--primary-blue);
+}
+
+
+.admission-query button i {
+    color: var(--secondary-orange);
+}
+
+.admission-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+/* Admission section ends here */
+
+/* Feedback Section starts here */
+.feedback {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 100px;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-left-card, .feedback-right-card {
+    width: 50%;
+    height: 70%;
+}
+
+.feedback-left-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feedback-right-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.feedback-right-card h2 {
+    font-size: 2em;
+    color: var(--secondary-orange);
+    margin-bottom: 1em;
+}
+
+.feedback-content {
+    border-left: 7px solid var(--secondary-orange);
+    padding-left: 20px;
+}
+
+.feedback-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.feedback-content .comment {
+    color: #444444;
+    font-size: .8em;
+    margin-bottom: 1em;
+    font-style: italic;
+}
+
+/* Explore Section starts here */
+
+.explore {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.explore h2 {
+    margin-bottom: 55px;
+    font-size: 2.5em;
+    color: var(--secondary-orange);
+}
+
+.explore-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.explore-card {
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--primary-blue);
+    color: #fff;
+    transition: all .2s;
+}
+
+.explore-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transform: scale(1.02);
+}
+
+.explore-image-container {
+    width: 100%;
+    height: 60%;
+}
+
+.explore-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.explore-education-container {
+    width: 100%;
+    height: 40%;
+    padding: 0 5%;
+}
+
+.explore-education-container h4 {
+    font-size: .9em;
+    font-weight: 400;
+    margin: 2em 0;
+}
+
+.explore-education-container h3 {
+    font-size: 1.2em;
+}
+
+.quality {
+    position: relative;
+}
+
+.quality i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+    background-color: var(--secondary-orange);
+    padding: 10px;
+    border-radius: 100%;
+}
+
+/* Explore Section ends here */
+
+
+/* Feedback section ends here */
+
+/* Footer starts here */
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: var(--primary-blue);
+    padding: 0 5%;
+    margin-top: 200px;
+    display: flex;
+}
+
+.footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-container {
+    width: 700px;
+    height: 100%;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-logo h3 {
+    font-size: 1.9em;
+}
+
+.footer-logo img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.footer-social-container {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.footer-social-icon-container {
+    background-color: var(--secondary-orange);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7px;
+}
+
+.footer-contact-container {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-contact-container h4, .footer-links-container h4 {
+    margin-bottom: 1em;
+    color: var(--secondary-orange);
+}
+
+.footer-contact-container p {
+    margin-bottom: 1em;
+}
+
+.footer-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.footer-links-container a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-bottom: .7em;
+    transition: all .2s;
+}
+
+.footer-links-container a:hover {
+    color: var(--secondary-orange);
+    scale: 1.01;
+}
+
+.quick-links-left, .quick-links-right {
+    width: 50%;
+    height: 50%;
+}
+
+/* Footer ends here */
